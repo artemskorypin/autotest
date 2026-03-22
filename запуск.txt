@@ -1,0 +1,14 @@
+Прогон 1 (все тесты, кроме standalone) -> отчёт 1
+python -m pytest -m "not standalone" --html=report_main.html --self-contained-html
+Прогон 2 (только standalone) -> отчёт 2
+python -m pytest -m "standalone" --html=report_standalone.html --self-contained-html
+
+Просмотр отчетов
+
+python -m http.server 8000
+
+В браузере:
+
+http://localhost:8000/report_standalone.html
+
+http://localhost:8000/report_main.html
